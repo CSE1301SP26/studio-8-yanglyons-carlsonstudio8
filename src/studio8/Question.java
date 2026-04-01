@@ -9,9 +9,15 @@ public class Question {
 	 * @param prompt
 	 * @param answer
 	 * @param points
+	 * 
 	 */
+		private String prompt;
+		private String answer;
+		private int points;
 	public Question(String prompt, String answer, int points) {
-		throw new NotYetImplementedException();
+		this.prompt = prompt;
+		this.answer = answer;
+		this.points = points;
 	}
 	
 	/**
@@ -40,7 +46,8 @@ public class Question {
 	 * @return int points
 	 */
 	public int getPoints() {
-		throw new NotYetImplementedException();
+		int getPoints() = points;
+		return getPoints;
 	}
 	
 	/**
@@ -52,6 +59,7 @@ public class Question {
 	}
 	
 	public static void main(String[] args) {
+		Question q1 = new Question("prompt1", "answer1", 10)
 		// TODO: Create a Question object of your own!
 	}
 }

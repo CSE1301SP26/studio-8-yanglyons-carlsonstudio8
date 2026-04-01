@@ -10,8 +10,9 @@ public class Quiz {
 	 * Constructor
 	 * @param questions
 	 */
+	private Question[] questions;
 	public Quiz(Question[] questions) {
-		throw new NotYetImplementedException();
+		this.questions = questions;
 	}
 	
 	/**
@@ -30,7 +31,7 @@ public class Quiz {
 	 * @return int number of total points
 	 */
 	public int getTotalPoints() {
-		throw new NotYetImplementedException();
+		return questions.length;
 	}
 	
 	/**
@@ -41,11 +42,22 @@ public class Quiz {
 	 * @param in Scanner object to feed into getUserAnswer
 	 */
 	public void takeQuiz(Scanner in) {
-		throw new NotYetImplementedException();
+		int totalScore = 0;
+		for(int i = 0; i<questions.length; i++){
+			Question q = questions[i];
+			q.displayPrompt();
+			String answer = getUserAnswer(in);
+			int points = q.checkAnswer(answer);
+			System.out.println("You earned" + points + "points");
+			totalScore += points;
+		}
 	}
 	
 	
 	public static void main(String[] args) {
-		// TODO: Make your own Quiz!
+		MultipleChoiceQuestion("prompt2", "answer2", 15 , ("a","b","c"));
+		SelectAllQuestion("prompt3", "answer4", ("a", "b", "c"));
+		
+
 	}
 }
